@@ -15,10 +15,10 @@ public class Application {
 		return (seperatewords == null )? 0: seperatewords.length;
 		  
 	}
-	
+	   
     public Application() {
         System.out.println ("Inside Application");
-    }
+    }   
 	
 	public void countWords(String words){
 		List<String> greetings = new ArrayList<>();
