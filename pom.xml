@@ -8,9 +8,43 @@
   <artifactId>example</artifactId>
   <version>1.0</version>
   
+
+<dependencies>
+
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.0</version>
+</dependency>
+
+
+</dependencies>
+
   
-    <build>
+
+
+
+  <build>
     <plugins>
+
+
+
+<!-- This Shade Plugin is used to package all dependencies into the final buil jar file. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>1.6</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -20,8 +54,10 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+
+
     </plugins>
   </build>
-  
+
   
 </project>
